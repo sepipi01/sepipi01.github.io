@@ -40,6 +40,111 @@ header {
     font-size: 1.8rem;
     font-weight: 600;
     color: #2c3e50;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+
+.logo:hover {
+    color: #3498db;
+}
+
+
+.logo:focus-visible {
+    color: #3498db;
+    outline: 3px solid rgba(52, 152, 219, 0.35);
+    outline-offset: 5px;
+    border-radius: 4px;
+}
+
+
+/* Mobile navigation button */
+.menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: #2c3e50;
+    cursor: pointer;
+}
+
+
+.menu-toggle:hover {
+    background: #eef6fc;
+}
+
+
+.menu-toggle:focus-visible {
+    outline: 3px solid rgba(52, 152, 219, 0.35);
+    outline-offset: 2px;
+}
+
+
+.menu-toggle-icon,
+.menu-toggle-icon::before,
+.menu-toggle-icon::after {
+    display: block;
+    width: 24px;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+
+.menu-toggle-icon {
+    position: relative;
+}
+
+
+.menu-toggle-icon::before,
+.menu-toggle-icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+}
+
+
+.menu-toggle-icon::before {
+    top: -7px;
+}
+
+
+.menu-toggle-icon::after {
+    top: 7px;
+}
+
+
+.menu-toggle[aria-expanded="true"] .menu-toggle-icon {
+    background: transparent;
+}
+
+
+.menu-toggle[aria-expanded="true"] .menu-toggle-icon::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+
+.menu-toggle[aria-expanded="true"] .menu-toggle-icon::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 
@@ -321,10 +426,43 @@ article {
 
 @media (max-width: 768px) {
 
+    header {
+        padding: 0.75rem 1rem;
+        flex-wrap: wrap;
+    }
+
+
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    #navbar {
+        display: none;
+        width: 100%;
+        padding-top: 0.75rem;
+    }
+
+
+    #navbar.is-open {
+        display: block;
+    }
+
     nav ul {
         flex-direction: column;
-        align-items: center;
-        gap: 1rem;
+        align-items: stretch;
+        gap: 0.25rem;
+        padding-top: 0.5rem;
+        border-top: 1px solid #e6edf3;
+    }
+
+
+    nav a {
+        display: block;
+        padding: 0.75rem;
+        border-radius: 6px;
     }
 
 
@@ -338,7 +476,7 @@ article {
 
 
     .logo {
-        font-size: 1.5rem;
+        font-size: 1.35rem;
     }
 
 
