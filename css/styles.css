@@ -40,6 +40,21 @@ header {
     font-size: 1.8rem;
     font-weight: 600;
     color: #2c3e50;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+
+.logo:hover {
+    color: #3498db;
+}
+
+
+.logo:focus-visible {
+    color: #3498db;
+    outline: 3px solid rgba(52, 152, 219, 0.35);
+    outline-offset: 5px;
+    border-radius: 4px;
 }
 
 
